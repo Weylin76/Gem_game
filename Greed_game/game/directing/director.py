@@ -39,7 +39,9 @@ class Director:
         """
         robot = cast.get_first_actor("robots")
         velocity = self._keyboard_service.get_direction()
-        robot.set_velocity(velocity)        
+        robot.set_velocity(velocity) 
+        # artifact =cast.get_first_actor("artifact")  Not working yet
+        # artifact.set_velocity(velocity)      
 
     def _do_updates(self, cast):
         """Updates the robot's position and resolves any collisions with artifacts.
@@ -60,8 +62,8 @@ class Director:
             if robot.get_position().equals(artifact.get_position()):
                 # message = artifact.get_points()
                 # banner.set_text(points)   
-                points = artifact.get_points()
-                banner.set_text(points)  
+                points = artifact.get_score()
+                banner.set_text(f"score {points}")  
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
