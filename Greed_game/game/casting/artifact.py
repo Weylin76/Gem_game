@@ -13,14 +13,14 @@ class Artifact(Actor):
         self._score = 0
 
 
-    def set_score(self,score):
+    def set_score(self, text):
         """
         Tell director to add or minus 1 based on artifact type
         return 
         """
-        if self._text == 42:
+        if text == 42:
             score += 1
-        elif self._text == 79:
+        elif text == 79:
             score -=1
         else:
             score += 0
