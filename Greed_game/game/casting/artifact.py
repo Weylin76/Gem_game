@@ -11,7 +11,7 @@ class Artifact(Actor):
     '''
 
     def __init__(self):
-        super().__init__() #super links to the parnet class
+        super().__init__() 
         self._score = 0
         
 
@@ -32,6 +32,3 @@ class Artifact(Actor):
         Tell the director to remove the artifact when 'touched'.
         """
         pass
-
-
-

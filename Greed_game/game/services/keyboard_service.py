@@ -38,5 +38,5 @@ class KeyboardService:
 
         direction = Point(dx, dy)
         direction = direction.scale(self._cell_size)
-        
+
         return direction
