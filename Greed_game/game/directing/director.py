@@ -66,7 +66,7 @@ class Director:
 
                 self._points.append(artifact.set_score())
                 # To remove artifact
-                artifact.remove_artifact()
+                cast.remove_actor('artifacts', artifact)
 
         total_points = sum(self._points)
         banner.set_text(f"score: {total_points}")  
