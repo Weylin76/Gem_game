@@ -1,17 +1,20 @@
 from game.casting.actor import Actor
 from game.shared.point import Point
 
+
 class Artifact(Actor):
     '''
-    Grabs message from message.txt    
+    Calculates the score for a gem or a rock.
 
     Attributes: 
-    _message (string): from the message text file
+     set_score is to detemine a point for a gem, minus a point for a rock.
+     remove_artifact is to remove the artifact when the robot touches it.
     '''
 
     def __init__(self):
         super().__init__() #super links to the parnet class
         self._score = 0
+        
 
 
     def set_score(self):
@@ -19,14 +22,19 @@ class Artifact(Actor):
         Tell director to add or minus 1 based on artifact type
         return 
         """
-    
         if self._text == '*':
             self._score += 1
-        elif self._text == 'O':
+        elif self._text  == 'O':
             self._score -=1
-        #else:
-            #self._score += 0
         return self._score
+
+    def remove_artifact(self):
+        """
+        Tell the director to remove the artifact when 'touched'.
+        """
+        pass
+
+
 
     # def get_score(self):
     #     """

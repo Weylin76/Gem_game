@@ -22,9 +22,8 @@ FONT_SIZE = 15
 COLS = 60
 ROWS = 40
 CAPTION = "Greed Game"
-# DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
 WHITE = Color(255, 255, 255)
-DEFAULT_ARTIFACTS = 1000 #can chagne num of rocks and gems
+DEFAULT_ARTIFACTS = 40 
 
 
 def main():
@@ -52,15 +51,12 @@ def main():
     robot.set_position(position)
     cast.add_actor("robots", robot)
     
-    # create the artifacts
-    # with open(DATA_PATH) as file:
-    #     data = file.read()
-        #messages = data.splitlines()
+
 
     for n in range(DEFAULT_ARTIFACTS):
         text_list = [42,79]
-        text = chr(random.choice(text_list)) #controls object type  #42 *  79 O
-        #message = messages[n]
+        text = chr(random.choice(text_list)) 
+
 
         x = random.randint(1, COLS - 1)
         y = random.randint(1, ROWS - 1)
@@ -77,9 +73,8 @@ def main():
         artifact.set_font_size(FONT_SIZE)
         artifact.set_color(color)
         artifact.set_position(position)
-        # artifact.set_message(message)
-        # artifact.set_points(points)
         artifact.set_velocity(Point(0, 3))
+
         cast.add_actor("artifacts", artifact)
     
     # start the game
