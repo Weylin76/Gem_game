@@ -11,7 +11,7 @@ class Artifact(Actor):
     '''
 
     def __init__(self):
-        super().__init__()
+
         self._score = 0
         
 
@@ -26,7 +26,5 @@ class Artifact(Actor):
         elif self._text  == 'O':
             self._score -=1
         return self._score
-
-
 
 
